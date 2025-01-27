@@ -7,14 +7,14 @@ db = SQLAlchemy()
 def create_app():
   app = Flask(__name__)
 
- # mysql 연결
   app.config.from_mapping(
+    # mysql 연결
     SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:1234@localhost:3306/soomha',
-
-    # SQLalchemy가 변경 사항을 추적하지 않도록 함.
+    
+    # SQLAlchemy가 변경 사항 추적하지 않도록 함.
     SQLALCHEMY_TRACK_MODIFICATIONS = False,
 
-    # SQLalchemy가 실행하는 SQL쿼리를 콘솔에 출력하게 함.
+    # SQLAlchemy가 실행하는 SQL 쿼리를 콘솔에 출력하게 함.
     SQLALCHEMY_EHCO=True
   )
 
