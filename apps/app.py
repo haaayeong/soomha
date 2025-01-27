@@ -10,7 +10,11 @@ def create_app():
  # mysql 연결
   app.config.from_mapping(
     SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:1234@localhost:3306/soomha',
+
+    # SQLalchemy가 변경 사항을 추적하지 않도록 함.
     SQLALCHEMY_TRACK_MODIFICATIONS = False,
+
+    # SQLalchemy가 실행하는 SQL쿼리를 콘솔에 출력하게 함.
     SQLALCHEMY_EHCO=True
   )
 
@@ -22,4 +26,4 @@ def create_app():
   def test():
     return '테스트 성공'
   
-  return test
+  return app
