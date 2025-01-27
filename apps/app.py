@@ -10,7 +10,7 @@ def create_app():
   app.config.from_mapping(
     # mysql 연결
     SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://root:1234@localhost:3306/soomha',
-
+    
     # SQLAlchemy가 변경 사항 추적하지 않도록 함.
     SQLALCHEMY_TRACK_MODIFICATIONS = False,
 
